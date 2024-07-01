@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamster Kombat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='modal.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Hamster Kombat</h1>
+        <div id="balanceInfo" class="info-box">
+            <div class="info-column">
+                <p><strong>Balance:</strong> <em id="balance">Loading...</em></p>
+                <p><strong>Taps:</strong> <em id="taps">Loading...</em></p>
+                <p><strong>Last Update:</strong> <em id="lastUpdate">Loading...</em></p>
+                <p><strong>Selected Exchange:</strong> <em id="exchange">Loading...</em></p>
+            </div>
+            <div class="info-column">
+                <p><strong>Earn / s:</strong> <em id="earnPerSec">Loading...</em></p>
+                <p><strong>Earn / h:</strong> <em id="earnPerHour">Loading...</em></p>
+                <p><strong>Earn / day:</strong> <em id="earnPerDay">Loading...</em></p>
+                <p><strong>Earn / week:</strong> <em id="earnPerWeek">Loading...</em></p>
+                <p><strong>Last Passive Earn:</strong> <em id="lastPassiveEarn">Loading...</em></p>
+            </div>
+        </div>
+        <div class="tabs">
+            <a href="#main" class="tablinks" id="defaultOpen">Main</a>
+            <a href="#dailycipher" class="tablinks">Daily Cipher</a>
+            <a href="#userinfo" class="tablinks">User Info</a>
+        </div>
+
+        <div id="main" class="tabcontent active">
+            <div class="controls">
+                <label for="count">Number of IDs to Fetch:</label>
+                <select id="count">
+                    <option value="10">10</option>
+                    <option value="25" selected>25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+                <button id="fetchData" disabled>Get Data</button>
+            </div>
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Section</th>
+                        <th>Efficiency %</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="dailycipher" class="tabcontent">
+            <label for="cipher">Enter Daily Cipher:</label>
+            <input type="text" id="cipher">
+            <button id="enterCipher">Enter</button>
+        </div>
+
+        <div id="userinfo" class="tabcontent">
+            <button id="getUserInfo">Get Data</button>
+            <div id="userInfoContent">
+                <!-- Здесь будут отображаться данные пользователя -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for messages -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-message"></p>
+            <button id="modal-ok">OK</button>
+        </div>
+    </div>
+
+    <!-- Modal for Bearer Token -->
+    <div id="token-modal" class="modal">
+        <div class="modal-content">
+            <h2>Enter Bearer Token</h2>
+            <input type="text" id="token-input" placeholder="Bearer Token">
+            <button id="token-submit">Submit</button>
+        </div>
+    </div>
+
+    <!-- Modal for Upgrade Confirmation -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-confirm">&times;</span>
+            <p id="confirm-message"></p>
+            <button id="confirm-ok">OK</button>
+            <button id="confirm-cancel">Cancel</button>
+        </div>
+    </div>
+</body>
+</html>

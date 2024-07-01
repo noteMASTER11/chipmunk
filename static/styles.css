@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.tabs a {
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    margin-right: 5px;
+}
+
+.tabs a.active {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+.tabcontent {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+#balanceInfo {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-column {
+    flex: 1;
+    padding: 10px;
+}
+
+.info-column p {
+    margin: 5px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.price-green strong {
+    color: green;
+    font-weight: bold;
+}
+
+.price-red strong {
+    color: red;
+    font-weight: bold;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    transition: opacity 0.5s; /* Smooth transition */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 7px;
+    width: 40%; /* Could be more or less, depending on screen size */
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-ok, #token-submit {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#modal-ok:hover, #token-submit:hover {
+    background-color: #45a049;
+}
+
+#token-input {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 20px auto;
+    display: block;
+}
